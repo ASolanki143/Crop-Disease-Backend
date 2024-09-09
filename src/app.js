@@ -17,12 +17,14 @@ app.use(express.static("public"));
 app.use(cookieParser());
 
 //import routes
+import commentRoute from "./routes/comment.route.js";
+import likeRoute from "./routes/like.route.js";
 import postRoute from "./routes/post.route.js";
 import userRoute from "./routes/user.route.js";
-import commentRoute from "./routes/comment.route.js";
 
 app.use("/api/v1/users", userRoute);
 app.use("/api/v1/posts", postRoute);
 app.use("/api/v1/comments", commentRoute);
+app.use("/api/v1/likes", likeRoute);
 
 export { app };
